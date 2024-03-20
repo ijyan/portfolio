@@ -1,1 +1,1 @@
-export { Main } from '@/widgets/Main/ui/Main/Main.tsx';
+export { Project } from '@/widgets/Project/ui/Project.tsx';
