@@ -1,4 +1,4 @@
-import * as s from '@/widgets/Header/ui/Header/Header.css.ts';
+import * as s from '@/widgets/Header/ui/Header.css.ts';
 
 export function Header() {
   return (

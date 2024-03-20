@@ -1,6 +1,5 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 import { vars } from '@/shared/theme.css.ts';
-// import { font } from '@/shared/fonts.css.ts';
 
 /* **************************************** *
  * RESET
@@ -46,58 +45,43 @@ globalStyle('table', {
 /* **************************************** *
  * GLOBAL STYLES
  * **************************************** */
-export const defaultFontSize = style({
-  vars: {
-    '--size': '390',
-  },
-  '@media': {
-    'screen and (min-width: 768px)': {
-      vars: {
-        '--size': '1500',
-      },
-    },
-  },
-  fontSize: `clamp(1px, 14px, 10 * 100vw / var(--size))`,
-});
-
 globalStyle('*', {
   boxSizing: 'border-box',
 });
 
 globalStyle('html', {
-  fontSize: '6.25%',
+  vars: {
+    '--size': '390',
+    '--mainOpacity': '1',
+  },
   '@media': {
-    'screen and (min-width: 2000px)': {
-      fontSize: '0.05254860746190225vw',
-    },
-    'screen and (max-width: 1480px)': {
-      fontSize: '0.06756756756756757vw',
-    },
-    'screen and (max-width: 1023px)': {
-      fontSize: '0.09775171065493645vw',
-    },
-    'screen and (max-width: 860px)': {
-      fontSize: '0.13020833333333335vw',
-    },
-    'screen and (max-width: 540px)': {
-      fontSize: '0.26666666666666665vw',
+    'screen and (min-width: 860px)': {
+      vars: {
+        '--size': '1500',
+        '--mainOpacity': '1',
+      },
     },
   },
+  fontSize: `clamp(1px, 14px, 10 * 100vw / var(--size))`,
+  scrollBehavior: 'smooth',
+  backgroundColor: `${vars.color.background}`,
 });
 
 globalStyle('body', {
-  fontSize: '16rem',
-  // fontFamily:
-  //   '"Inter", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
-  // fontFamily:
-  //   '-apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
-  fontFamily: 'Pretendard',
+  fontSize: '1.4rem',
+  '@media': {
+    'screen and (min-width: 860px)': {
+      fontSize: '1.6rem',
+    },
+  },
+  fontFamily:
+    '"Manrope", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif',
   lineHeight: 1.5,
   wordBreak: 'keep-all',
   wordWrap: 'break-word',
   overflowX: 'hidden',
-  backgroundColor: `${vars.color.background}`,
   WebkitFontSmoothing: 'antialiased',
+  color: '#fff',
 });
 
 globalStyle('a', {
@@ -125,7 +109,52 @@ globalStyle('.blind', {
 });
 
 globalStyle('.container', {
-  margin: '0 auto',
-  padding: '36rem 62rem',
-  width: '100%',
+  paddingInline: '2.4rem',
+  '@media': {
+    'screen and (min-width: 860px)': {
+      paddingInline: '4.8rem',
+    },
+  },
+});
+
+globalStyle('.main-grid', {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(6, minmax(0, 1fr))',
+  gridColumnGap: '2rem',
+
+  '@media': {
+    'screen and (min-width: 860px)': {
+      gridTemplateColumns: 'repeat(12, minmax(0, 1fr))',
+      gridColumnGap: '4.8rem',
+    },
+  },
+});
+
+export const label = style({
+  display: 'flex',
+  alignItems: 'center',
+  marginBottom: '1.5rem',
+  opacity: 0.5,
+  gap: '0.8rem',
+  fontSize: '1.4rem',
+  fontWeight: 600,
+  '@media': {
+    'screen and (min-width: 860px)': {
+      fontSize: '1.6rem',
+    },
+  },
+});
+
+globalStyle(`${label} img`, {
+  width: '1rem',
+});
+
+globalStyle('.main-opacity', {
+  opacity: 'var(--mainOpacity)',
+  transition: 'opacity .7s cubic-bezier(.25,.46,.45,.94)',
+});
+
+globalStyle('.main-opacity-full', {
+  zIndex: 20,
+  opacity: 1,
 });

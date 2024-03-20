@@ -1,5 +1,4 @@
 import { globalStyle, keyframes, style } from '@vanilla-extract/css';
-import { enfontFamily } from '@/shared/fonts.css.ts';
 
 /* **************************************** *
  * HEADER
@@ -11,11 +10,13 @@ export const header = style({
   width: '100vw',
   zIndex: 99,
   position: 'fixed',
+  top: 0,
+  paddingBlock: '2.8rem',
 });
 
 globalStyle(`${header} svg`, {
-  width: '30rem',
-  height: '30rem',
+  width: '3rem',
+  height: '3rem',
 });
 
 /* **************************************** *
@@ -24,6 +25,8 @@ globalStyle(`${header} svg`, {
 export const headerLogo = style({
   position: 'relative',
   transformStyle: 'preserve-3d',
+  width: '3rem',
+  height: '3rem',
 });
 
 export const rotate = keyframes({
@@ -42,34 +45,35 @@ export const headerLogoMaker = style({
   transform: 'translate3d(-50%, -50%, 0)',
   transformStyle: 'preserve-3d',
   animation: `${rotate} 6s linear infinite`,
+  width: '3rem',
+  height: '3rem',
 });
 
 globalStyle(`${headerLogoMaker} svg`, {
-  transform: 'translateZ(16rem)',
+  transform: 'translateZ(1.5rem)',
 });
 
 /* **************************************** *
- * HEADER LOGO LINK
+ * HEADER LINK - NAV
  * **************************************** */
 export const headerLinkWrap = style({
   display: 'flex',
-  gap: '36rem',
+  gap: '2.8rem',
 });
 
 export const headerLink = style({
-  fontSize: '18rem',
+  fontSize: '1.6rem',
   color: '#fff',
   fontWeight: '600',
   position: 'relative',
   zIndex: 99,
-  fontFamily: `${enfontFamily}`,
   selectors: {
     '&:before': {
       content: '',
       background: 'url(/images/ico_arrowDown.svg)',
-      width: '20rem',
-      height: '20rem',
-      backgroundSize: '20rem',
+      width: '1.5rem',
+      height: '1.5rem',
+      backgroundSize: '1.5rem',
       position: 'absolute',
       left: '50%',
       top: '50%',
