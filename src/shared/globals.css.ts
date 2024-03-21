@@ -151,7 +151,7 @@ globalStyle(`${label} img`, {
 
 globalStyle('.main-opacity', {
   opacity: 'var(--mainOpacity)',
-  transition: 'opacity .7s cubic-bezier(.25,.46,.45,.94)',
+  transition: 'opacity .3s cubic-bezier(.25,.46,.45,.94)',
 });
 
 globalStyle('.main-opacity-full', {

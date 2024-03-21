@@ -3,11 +3,13 @@ import { label } from '@/shared/globals.css.ts';
 import { IProduct } from '@/widgets/Project/api/types.ts';
 import { gsap } from 'gsap';
 import { useEffect, useState } from 'react';
+import { useCursorStore } from '@/shared/lib/useCursorStore.ts';
 
 // import { useNavigate } from 'react-router-dom';
 
 export function Project() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
+  const { setHovered } = useCursorStore();
 
   const data: IProduct[] = [
     {
@@ -54,8 +56,14 @@ export function Project() {
         <div
           className={`${s.projectList} main-grid main-opacity ${hoveredId === item.id ? 'main-opacity-full' : ''}`}
           key={item.id}
-          onMouseEnter={() => setHoveredId(item.id)}
-          onMouseLeave={() => setHoveredId(null)}
+          onMouseEnter={() => {
+            setHoveredId(item.id);
+            setHovered(true);
+          }}
+          onMouseLeave={() => {
+            setHoveredId(null);
+            setHovered(false);
+          }}
         >
           <div className={`${s.projectYear}`}>{item.year}</div>
           <div className={`${s.projectTitleWrap}`}>
