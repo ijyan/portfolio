@@ -130,6 +130,16 @@ globalStyle('.main-grid', {
   },
 });
 
+globalStyle('.main-opacity', {
+  opacity: 'var(--mainOpacity)',
+  transition: 'opacity .3s cubic-bezier(.25,.46,.45,.94)',
+});
+
+globalStyle('.main-opacity-full', {
+  zIndex: 20,
+  opacity: 1,
+});
+
 export const label = style({
   display: 'flex',
   alignItems: 'center',
@@ -147,14 +157,4 @@ export const label = style({
 
 globalStyle(`${label} img`, {
   width: '1rem',
-});
-
-globalStyle('.main-opacity', {
-  opacity: 'var(--mainOpacity)',
-  transition: 'opacity .3s cubic-bezier(.25,.46,.45,.94)',
-});
-
-globalStyle('.main-opacity-full', {
-  zIndex: 20,
-  opacity: 1,
 });

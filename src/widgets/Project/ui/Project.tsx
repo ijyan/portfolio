@@ -48,9 +48,11 @@ export function Project() {
 
   return (
     <section className={`${s.project} container`}>
-      <div className={`${label} main-opacity`}>
-        Projects
-        <img src="/images/ico_arrowCurved.svg" alt="화살표" />
+      <div className="main-opacity">
+        <div className={`${label}`}>
+          Projects
+          <img src="/images/ico_arrowCurved.svg" alt="화살표" />
+        </div>
       </div>
       {data.map(item => (
         <div
