@@ -9,8 +9,6 @@ export const header = style({
   alignItems: 'center',
   width: '100vw',
   zIndex: 99,
-  position: 'fixed',
-  top: 0,
   paddingBlock: '2.8rem',
 });
 
