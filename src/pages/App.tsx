@@ -6,6 +6,7 @@ import { Header } from '@/widgets/Header';
 import { Intro } from '@/widgets/Intro/ui/Intro.tsx';
 import { Project } from '@/widgets/Project';
 import { Cursor } from '@/widgets/Cursor';
+import { Footer } from '@/widgets/Footer';
 // import { useEffect } from 'react';
 // import smooth from '@/shared/smooth.ts';
 
@@ -20,6 +21,7 @@ function App() {
       <main>
         <Intro />
         <Project />
+        <Footer />
       </main>
       <Cursor />
     </>
