@@ -87,7 +87,7 @@ export const projectButtonWrap = style({
   },
 });
 
-export const projectButtonLink = style({
+export const projectLink = style({
   fontSize: '1.6rem',
   color: '#fff',
   fontWeight: '600',
@@ -114,12 +114,12 @@ export const projectButtonLink = style({
   },
 });
 
-export const projectButtonText = style({
+export const projectLinkText = style({
   display: 'inline-block',
   transition: '.45s cubic-bezier(.68, .6, .32, 1.6)',
 
   selectors: {
-    [`${projectButtonLink}:hover &`]: {
+    [`${projectLink}:hover &`]: {
       opacity: 0,
       transform: 'translateX(20%)',
       visibility: 'hidden',

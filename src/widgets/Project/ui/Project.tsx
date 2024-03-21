@@ -3,13 +3,10 @@ import { label } from '@/shared/globals.css.ts';
 import { IProduct } from '@/widgets/Project/api/types.ts';
 import { gsap } from 'gsap';
 import { useEffect, useState } from 'react';
-import { useCursorStore } from '@/shared/lib/useCursorStore.ts';
-
-// import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function Project() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
-  const { setHovered } = useCursorStore();
 
   const data: IProduct[] = [
     {
@@ -48,10 +45,11 @@ export function Project() {
 
   return (
     <section className={`${s.project} container`}>
+      <div className="blind">프로젝트</div>
       <div className="main-opacity">
         <div className={`${label}`}>
           Projects
-          <img src="/images/ico_arrowCurved.svg" alt="화살표" />
+          <img src="/images/ico_arrowCurved.svg" alt="" />
         </div>
       </div>
       {data.map(item => (
@@ -60,11 +58,9 @@ export function Project() {
           key={item.id}
           onMouseEnter={() => {
             setHoveredId(item.id);
-            setHovered(true);
           }}
           onMouseLeave={() => {
             setHoveredId(null);
-            setHovered(false);
           }}
         >
           <div className={`${s.projectYear}`}>{item.year}</div>
@@ -73,20 +69,16 @@ export function Project() {
             <div className="tag">{item.tag}</div>
           </div>
           <div className={s.projectButtonWrap}>
-            <button
-              type="button"
-              className={s.projectButtonLink}
-              onClick={() => window.open(item.link.code, '_blank')}
+            <Link to={item.link.code} target="_blank" className={s.projectLink}>
+              (<span className={s.projectLinkText}>CODE</span>)
+            </Link>
+            <Link
+              to={item.link.launch}
+              target="_blank"
+              className={s.projectLink}
             >
-              (<span className={s.projectButtonText}>CODE</span>)
-            </button>
-            <button
-              type="button"
-              className={s.projectButtonLink}
-              onClick={() => window.open(item.link.launch, '_blank')}
-            >
-              (<span className={s.projectButtonText}>LINK</span>)
-            </button>
+              (<span className={s.projectLinkText}>LINK</span>)
+            </Link>
           </div>
         </div>
       ))}
