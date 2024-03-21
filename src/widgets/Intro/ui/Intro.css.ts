@@ -4,7 +4,7 @@ import { style } from '@vanilla-extract/css';
  * INTRO
  * **************************************** */
 export const intro = style({
-  margin: '10rem 0 0',
+  margin: '4rem 0 0',
 });
 
 export const introImgWrap = style({
