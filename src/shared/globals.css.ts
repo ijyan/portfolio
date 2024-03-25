@@ -63,7 +63,6 @@ globalStyle('html', {
     },
   },
   fontSize: `clamp(1px, 14px, 10 * 100vw / var(--size))`,
-  scrollBehavior: 'smooth',
   backgroundColor: `${vars.color.background}`,
 });
 
