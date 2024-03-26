@@ -3,8 +3,7 @@ import { Intro } from '@/widgets/Intro/ui/Intro.tsx';
 import { Project } from '@/widgets/Project';
 import { Cursor } from '@/widgets/Cursor';
 import { About } from '@/widgets/About';
-import LinkEventHandler from '@/shared/lib/LinkEventHandler.ts';
-import { useLenisStore } from '@/shared/lib/useLenisStore.ts';
+import { LinkEventHandler, useLenisStore } from '@/shared/lib';
 import { useEffect } from 'react';
 
 function App() {

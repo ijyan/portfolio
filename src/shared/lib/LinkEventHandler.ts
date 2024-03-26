@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useCursorStore } from './useCursorStore';
 
-function LinkEventHandlers() {
+export function LinkEventHandler() {
   const { setHovered } = useCursorStore();
 
   useEffect(() => {
@@ -33,5 +33,3 @@ function LinkEventHandlers() {
 
   return null;
 }
-
-export default LinkEventHandlers;
