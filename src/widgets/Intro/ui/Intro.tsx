@@ -19,7 +19,7 @@ export function Intro() {
     });
 
     tl.to(introImgWrapRef.current, {
-      x: '-20%',
+      x: '-30%',
     });
 
     return () => {
