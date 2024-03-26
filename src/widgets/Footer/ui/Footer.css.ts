@@ -68,7 +68,7 @@ globalStyle(`${textLink}:hover div`, {
 });
 
 globalStyle(`${textLink} span`, {
-  display: 'inline-block',
+  display: 'none',
   fontSize: '1rem',
   marginLeft: '1rem',
   opacity: 0,
@@ -77,6 +77,7 @@ globalStyle(`${textLink} span`, {
 });
 
 globalStyle(`${textLink}:hover span`, {
+  display: 'inline-block',
   opacity: 0.5,
   transform: 'translateY(-0.08rem)',
 });

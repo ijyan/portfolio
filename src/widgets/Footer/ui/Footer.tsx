@@ -13,7 +13,7 @@ export function Footer() {
             <img src="/images/ico_arrowCurved.svg" alt="" />
           </div>
           <div>
-            <Link to="#" className={s.textLink}>
+            <Link to="mailto:kjian900@gmail.com" className={s.textLink}>
               <img src="/images/ico_arrow.svg" alt="" />
               <div>
                 Mail
@@ -22,24 +22,36 @@ export function Footer() {
             </Link>
           </div>
           <div>
-            <Link to="#" className={s.textLink}>
-              <img src="/images/ico_arrow.svg" alt="" />
-              <div>Phone</div>
-              <span>010-2651-8065</span>
-            </Link>
-          </div>
-          <div>
-            <Link to="#" className={s.textLink} target="_blank">
+            <Link
+              to="https://ijyan.notion.site/949d47057a314053b34087348f0f5ce8?pvs=4"
+              className={s.textLink}
+              target="_blank"
+            >
               <img src="/images/ico_arrow.svg" alt="" />
               <div>Notion</div>
             </Link>
           </div>
           <div>
-            <Link to="#" className={s.textLink} target="_blank">
+            <Link
+              to="https://github.com/ijyan"
+              className={s.textLink}
+              target="_blank"
+            >
               <img src="/images/ico_arrow.svg" alt="" />
               <div>
                 Github
                 <span>@ijyan</span>
+              </div>
+            </Link>
+          </div>
+          <div>
+            <Link to="tel:010-2651-8065" className={s.textLink}>
+              <img src="/images/ico_arrow.svg" alt="" />
+              <div>
+                <div>
+                  Phone
+                  <span>010-2651-8065</span>
+                </div>
               </div>
             </Link>
           </div>
