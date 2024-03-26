@@ -1,5 +1,5 @@
 import * as s from '@/widgets/Header/ui/Header.css.ts';
-import { useLenisStore } from '@/shared/lib/useLenisStore.ts';
+import { useLenisStore } from '@/shared/lib';
 
 export function Header() {
   const { lenis } = useLenisStore();
@@ -10,7 +10,6 @@ export function Header() {
     if (target && lenis) {
       lenis.scrollTo(target.offsetTop - offset, { duration: 2 });
     }
-    console.log(target);
   };
   return (
     <header className={`${s.header} container`}>
