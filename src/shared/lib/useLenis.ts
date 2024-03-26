@@ -4,7 +4,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const smooth = () => {
+const useLenis = () => {
   const lenis = new Lenis({
     lerp: 0.07,
   });
@@ -18,4 +18,4 @@ const smooth = () => {
   gsap.ticker.lagSmoothing(0);
 };
 
-export default smooth;
+export default useLenis;
