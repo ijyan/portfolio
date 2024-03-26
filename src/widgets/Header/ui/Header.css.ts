@@ -92,7 +92,7 @@ export const headerLinkText = style({
 
   selectors: {
     [`${headerLink}:hover &`]: {
-      transform: 'translateY(150%)',
+      transform: 'translateY(120%)',
     },
   },
 });

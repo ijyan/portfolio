@@ -1,6 +1,17 @@
 import * as s from '@/widgets/Header/ui/Header.css.ts';
+import { useLenisStore } from '@/shared/lib/useLenisStore.ts';
 
 export function Header() {
+  const { lenis } = useLenisStore();
+
+  const scrollToTarget = (id: string) => {
+    const target = document.getElementById(id);
+    const offset = 80;
+    if (target && lenis) {
+      lenis.scrollTo(target.offsetTop - offset, { duration: 2 });
+    }
+    console.log(target);
+  };
   return (
     <header className={`${s.header} container`}>
       <div className={s.headerLogo}>
@@ -29,14 +40,19 @@ export function Header() {
         </div>
       </div>
       <div className={s.headerLinkWrap}>
-        <button type="button" className={s.headerLink}>
+        <button
+          type="button"
+          className={s.headerLink}
+          onClick={() => scrollToTarget('project')}
+        >
           (<span className={s.headerLinkText}>PRJ</span>)
         </button>
-        <button type="button" className={s.headerLink}>
+        <button
+          type="button"
+          className={s.headerLink}
+          onClick={() => scrollToTarget('about')}
+        >
           (<span className={s.headerLinkText}>ABT</span>)
-        </button>
-        <button type="button" className={s.headerLink}>
-          (<span className={s.headerLinkText}>MSG</span>)
         </button>
       </div>
     </header>

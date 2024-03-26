@@ -1,20 +1,18 @@
-// import reactLogo from '../assets/react.svg';
-// eslint-disable-next-line
-// import viteLogo from '/vite.svg';
-// import './App.css';
 import { Header } from '@/widgets/Header';
 import { Intro } from '@/widgets/Intro/ui/Intro.tsx';
 import { Project } from '@/widgets/Project';
 import { Cursor } from '@/widgets/Cursor';
-import { Footer } from '@/widgets/Footer';
+import { About } from '@/widgets/About';
 import LinkEventHandler from '@/shared/lib/LinkEventHandler.ts';
+import { useLenisStore } from '@/shared/lib/useLenisStore.ts';
 import { useEffect } from 'react';
-import useLenis from '@/shared/lib/useLenis.ts';
 
 function App() {
+  const { initializeLenis } = useLenisStore();
+
   useEffect(() => {
-    useLenis();
-  }, []);
+    initializeLenis();
+  }, [initializeLenis]);
 
   return (
     <>
@@ -23,7 +21,7 @@ function App() {
       <main>
         <Intro />
         <Project />
-        <Footer />
+        <About />
       </main>
       <Cursor />
     </>

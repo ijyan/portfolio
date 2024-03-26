@@ -44,7 +44,7 @@ export function Project() {
   }, [hoveredId]);
 
   return (
-    <section className={`${s.project} container`}>
+    <section id="project" className={`${s.project} container`}>
       <div className="blind">프로젝트</div>
       <div className="main-opacity">
         <div className={`${label}`}>

@@ -1,9 +1,9 @@
 import { globalStyle, style } from '@vanilla-extract/css';
 
 /* **************************************** *
- * FOOTER
+ * ABOUT
  * **************************************** */
-export const footer = style({
+export const about = style({
   display: 'block',
   marginBlock: '9.6rem 8rem',
 
@@ -15,14 +15,14 @@ export const footer = style({
   },
 });
 
-globalStyle(`${footer} .main-grid`, {
+globalStyle(`${about} .main-grid`, {
   alignItems: 'start',
 });
 
 /* **************************************** *
- * CONTACT
+ * GET IN TOUCH
  * **************************************** */
-export const contact = style({
+export const getInTouch = style({
   gridColumn: '1 / span 6',
   order: 1,
 
@@ -34,6 +34,10 @@ export const contact = style({
       top: '4rem',
     },
   },
+});
+
+globalStyle(`${getInTouch} > div:nth-child(3)`, {
+  marginTop: '8rem',
 });
 
 export const textLink = style({
@@ -83,9 +87,9 @@ globalStyle(`${textLink}:hover span`, {
 });
 
 /* **************************************** *
- * ABOUT
+ * INTRODUCE
  * **************************************** */
-export const about = style({
+export const introduce = style({
   gridColumn: '1 / span 6',
   order: 0,
 
