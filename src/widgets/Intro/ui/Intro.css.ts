@@ -5,6 +5,7 @@ import { style } from '@vanilla-extract/css';
  * **************************************** */
 export const intro = style({
   margin: '2rem 0 0',
+  overflow: 'hidden',
 });
 
 export const introImgWrap = style({
@@ -20,7 +21,6 @@ export const introImg = style({
 
 export const introDesc = style({
   marginTop: '4.8rem',
-  fontSize: '1.6rem',
   fontWeight: 600,
   gridColumn: '1/ span 4',
   '@media': {
