@@ -1,35 +1,12 @@
 import * as s from '@/widgets/Project/ui/Project.css.ts';
 import { label } from '@/shared/globals.css.ts';
-import { IProduct } from '@/widgets/Project/api/types.ts';
 import { gsap } from 'gsap';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { data } from '@/widgets/Project/api/data.ts';
 
 export function Project() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
-
-  const data: IProduct[] = [
-    {
-      id: 1,
-      year: '//24',
-      title: 'Grow Green',
-      tag: 'React ㆍ Typescript',
-      link: {
-        code: '#',
-        launch: '',
-      },
-    },
-    {
-      id: 2,
-      year: '//24',
-      title: 'Grow Green',
-      tag: 'React ㆍ Typescript',
-      link: {
-        code: '#',
-        launch: '',
-      },
-    },
-  ];
 
   useEffect(() => {
     if (hoveredId) {
@@ -66,19 +43,38 @@ export function Project() {
           <div className={`${s.projectYear}`}>{item.year}</div>
           <div className={`${s.projectTitleWrap}`}>
             <div className="title">{item.title}</div>
-            <div className="tag">{item.tag}</div>
+            {/* <div className="tag">{item.tag}</div> */}
           </div>
           <div className={s.projectButtonWrap}>
-            <Link to={item.link.code} target="_blank" className={s.projectLink}>
-              (<span className={s.projectLinkText}>CODE</span>)
-            </Link>
-            <Link
-              to={item.link.launch}
-              target="_blank"
-              className={s.projectLink}
-            >
-              (<span className={s.projectLinkText}>LINK</span>)
-            </Link>
+            {item.link.code && (
+              <Link
+                to={item.link.code}
+                target="_blank"
+                className={s.projectLink}
+              >
+                (<span className={s.projectLinkText}>CODE</span>)
+              </Link>
+            )}
+            {item.link.notion && (
+              <Link
+                to={item.link.notion}
+                target="_blank"
+                className={s.projectLink}
+              >
+                (<span className={s.projectLinkText}>NOTION</span>)
+              </Link>
+            )}
+          </div>
+          <div className={s.projectLaunch}>
+            {item.link.launch && (
+              <Link to={item.link.launch} target="_blank">
+                Launch
+                <div className={s.projectLaunchIco}>
+                  <span />
+                  <img src="/images/ico_arrowLaunch.svg" alt="" />
+                </div>
+              </Link>
+            )}
           </div>
         </div>
       ))}

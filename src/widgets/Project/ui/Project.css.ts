@@ -55,16 +55,22 @@ export const projectList = style({
 });
 
 export const projectYear = style({
-  gridColumn: '1 / span 3',
+  gridColumn: '1 / span 1',
   fontWeight: 600,
 });
 
 export const projectTitleWrap = style({
-  gridColumn: '4 / span 6',
+  gridColumn: '2 / span 3',
+
+  '@media': {
+    'screen and (min-width: 860px)': {
+      gridColumn: '2 / span 6',
+    },
+  },
 });
 
 globalStyle(`${projectTitleWrap} .title`, {
-  fontSize: '2.6rem',
+  // fontSize: '2.6rem',
   fontWeight: 600,
 });
 
@@ -82,17 +88,24 @@ export const projectButtonWrap = style({
   '@media': {
     'screen and (min-width: 860px)': {
       gap: '2rem',
-      gridColumn: '10 / span 3',
+      gridColumn: '8 / span 3',
     },
   },
 });
 
 export const projectLink = style({
-  fontSize: '1.6rem',
   color: '#fff',
   fontWeight: '600',
   position: 'relative',
   zIndex: 99,
+  fontSize: '1rem',
+
+  '@media': {
+    'screen and (min-width: 860px)': {
+      fontSize: '1.6rem',
+    },
+  },
+
   selectors: {
     '&:before': {
       content: '',
@@ -125,4 +138,58 @@ export const projectLinkText = style({
       visibility: 'hidden',
     },
   },
+});
+
+export const projectLaunch = style({
+  display: 'none',
+
+  '@media': {
+    'screen and (min-width: 860px)': {
+      gridColumn: '12 / span 1',
+      display: 'block',
+    },
+  },
+});
+
+globalStyle(`${projectLaunch} a`, {
+  display: 'flex',
+  justifyContent: 'flex-end',
+  fontWeight: 600,
+});
+
+export const projectLaunchIco = style({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '2.4rem',
+  height: '2.4rem',
+  marginLeft: '1rem',
+  flexShrink: 0,
+  position: 'relative',
+});
+
+globalStyle(`${projectLaunchIco} span`, {
+  display: 'block',
+  width: '100%',
+  height: '100%',
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  backgroundColor: '#fff',
+  borderRadius: '50%',
+  transition: '.45s cubic-bezier(.34, 1.56, .48, 1.19)',
+});
+
+globalStyle(`${projectLaunchIco} img`, {
+  width: '1rem',
+  filter: 'invert(1)',
+  transition: '.45s cubic-bezier(.34, 1.56, .48, 1.19)',
+});
+
+globalStyle(`${projectLaunch} a:hover img`, {
+  transform: 'rotate(45deg)',
+});
+
+globalStyle(`${projectLaunch} a:hover span`, {
+  transform: 'scale(1.4)',
 });

@@ -145,7 +145,6 @@ export const label = style({
   marginBottom: '1.5rem',
   opacity: 0.5,
   gap: '0.8rem',
-  fontSize: '1.4rem',
   fontWeight: 600,
   '@media': {
     'screen and (min-width: 860px)': {
