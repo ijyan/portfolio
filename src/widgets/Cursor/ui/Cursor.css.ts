@@ -4,9 +4,15 @@ import { globalStyle, style } from '@vanilla-extract/css';
  * CURSOR
  * **************************************** */
 export const cursor = style({
-  position: 'fixed',
-  zIndex: 999,
-  pointerEvents: 'none',
+  display: 'none',
+  '@media': {
+    'screen and (min-width: 860px)': {
+      display: 'block',
+      position: 'fixed',
+      zIndex: 999,
+      pointerEvents: 'none',
+    },
+  },
 
   selectors: {
     '&:before': {

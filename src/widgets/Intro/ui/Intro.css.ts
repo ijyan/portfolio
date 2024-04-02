@@ -15,8 +15,14 @@ export const introImgWrap = style({
 });
 
 export const introImg = style({
-  width: '65vw',
+  width: '160vw',
   flex: '0 0 auto',
+
+  '@media': {
+    'screen and (min-width: 860px)': {
+      width: '65vw',
+    },
+  },
 });
 
 export const introDesc = style({
