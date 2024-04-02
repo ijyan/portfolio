@@ -3,6 +3,7 @@ export interface IProduct {
   year: string;
   title: string;
   link: IProductLink;
+  imgUrl: string;
 }
 
 export interface IProductLink {

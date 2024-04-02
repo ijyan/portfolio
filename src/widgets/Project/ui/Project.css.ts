@@ -54,11 +54,13 @@ export const projectList = style({
   },
 });
 
+// YEAR
 export const projectYear = style({
   gridColumn: '1 / span 1',
   fontWeight: 600,
 });
 
+// TITLE
 export const projectTitleWrap = style({
   gridColumn: '2 / span 3',
 
@@ -79,6 +81,7 @@ globalStyle(`${projectTitleWrap} .tag`, {
   paddingTop: '1.2rem',
 });
 
+// BUTTON
 export const projectButtonWrap = style({
   display: 'flex',
   gridColumn: '5 / span 2',
@@ -140,6 +143,7 @@ export const projectLinkText = style({
   },
 });
 
+// LAUNCH
 export const projectLaunch = style({
   display: 'none',
 

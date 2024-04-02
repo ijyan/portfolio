@@ -10,6 +10,8 @@ export const data: IProduct[] = [
       notion: '#',
       launch: '',
     },
+    imgUrl:
+      'https://images.unsplash.com/photo-1521493959102-bdd6677fdd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
   },
   {
     id: 2,
@@ -20,6 +22,8 @@ export const data: IProduct[] = [
       notion: '#',
       launch: '#',
     },
+    imgUrl:
+      'https://images.unsplash.com/photo-1473605768212-7e1f2c756179?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
   },
   {
     id: 3,
@@ -29,6 +33,8 @@ export const data: IProduct[] = [
       notion: '#',
       launch: 'https://www.geojeview.co.kr/',
     },
+    imgUrl:
+      'https://images.unsplash.com/photo-1521493959102-bdd6677fdd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
   },
   {
     id: 4,
@@ -39,6 +45,8 @@ export const data: IProduct[] = [
       launch:
         'https://www.peoplenjob.com/?gad_source=1&gclid=Cj0KCQjwqpSwBhClARIsADlZ_TnHRoQxCEllISdLNyWYvNd5mBhwoEidPjjf5iYRrs4SXLUsjpwFJ2UaAr-zEALw_wcB',
     },
+    imgUrl:
+      'https://images.unsplash.com/photo-1509099863731-ef4bff19e808?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80',
   },
   {
     id: 5,
@@ -48,5 +56,7 @@ export const data: IProduct[] = [
       notion: '#',
       launch: 'https://www.geojeview.co.kr/',
     },
+    imgUrl:
+      'https://images.unsplash.com/photo-1473605768212-7e1f2c756179?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
   },
 ];

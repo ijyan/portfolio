@@ -27,7 +27,7 @@ export const cursor = style({
   },
 });
 
-globalStyle(`${cursor}.pointer:before`, {
+globalStyle(`${cursor}.on:before`, {
   width: '0.8rem',
   height: '0.8rem',
 });
