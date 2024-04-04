@@ -8,30 +8,27 @@ export function Intro() {
   const introRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // const loadScrollTrigger = async () => {
-    const loadScrollTrigger = () => {
-      // ScrollTrigger 모듈 비동기 처리
-      // const ScrollTrigger = await import('gsap/ScrollTrigger');
-      gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: introRef.current,
-          start: 'clamp(top 50%)',
-          end: 'bottom top',
-          scrub: true,
-          markers: true,
-        },
-      });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: introRef.current,
+        start: 'clamp(top 50%)',
+        end: 'bottom top',
+        scrub: true,
+        markers: true,
+      },
+    });
 
-      tl.to(introImgWrapRef.current, {
-        duration: 1,
-        xPercent: -30,
-        ease: 'linear',
-      });
+    tl.to(introImgWrapRef.current, {
+      duration: 1,
+      xPercent: -30,
+      ease: 'linear',
+    });
+
+    window.onload = () => {
+      ScrollTrigger.refresh();
     };
-
-    loadScrollTrigger();
   }, []);
 
   return (
