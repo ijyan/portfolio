@@ -9,28 +9,46 @@ export function Intro() {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: introImgWrapRef.current,
-        start: 'top 0%',
-        end: 'bottom top',
-        scrub: true,
-        toggleActions: 'play none none reset',
-      },
-    });
+    // const tl = gsap.timeline({
+    //   scrollTrigger: {
+    //     trigger: introImgWrapRef.current,
+    //     start: 'top 0%',
+    //     end: 'bottom top',
+    //     scrub: true,
+    //     toggleActions: 'play none none reset',
+    //   },
+    // });
+    //
+    // tl.to(introImgWrapRef.current, {
+    //   x: '-30%',
+    // });
 
-    tl.to(introImgWrapRef.current, {
-      x: '-30%',
-    });
+    const initScrollTrigger = () => {
+      // 스크롤트리거 초기화
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: introImgWrapRef.current,
+          start: 'top 0%',
+          end: 'bottom top',
+          scrub: true,
+          toggleActions: 'play none none reset',
+        },
+      });
 
-    ScrollTrigger.config({
-      autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
-    });
+      tl.to(introImgWrapRef.current, {
+        x: '-30%',
+      });
+    };
 
-    ScrollTrigger.refresh();
+    // 페이지 로드 후 초기화
+    window.addEventListener('load', initScrollTrigger);
+
+    // 윈도우 크기 변경 시에도 초기화
+    window.addEventListener('resize', initScrollTrigger);
 
     return () => {
-      ScrollTrigger.getAll().forEach(instance => instance.kill());
+      window.removeEventListener('load', initScrollTrigger);
+      window.removeEventListener('resize', initScrollTrigger);
     };
   }, []);
 
