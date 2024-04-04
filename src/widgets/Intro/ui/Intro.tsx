@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react';
 
 export function Intro() {
   const introImgWrapRef = useRef<HTMLDivElement>(null);
+  const introRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const loadScrollTrigger = async () => {
@@ -13,9 +14,9 @@ export function Intro() {
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: introImgWrapRef.current,
-          start: () => 'clamp(top 50%)',
-          end: () => 'bottom top',
+          trigger: introRef.current,
+          start: 'clamp(top 50%)',
+          end: 'bottom top',
           scrub: true,
         },
       });
@@ -31,7 +32,7 @@ export function Intro() {
   }, []);
 
   return (
-    <section className={`${s.intro} main-opacity`}>
+    <section className={`${s.intro} main-opacity`} ref={introRef}>
       <div className={s.introImgWrap} ref={introImgWrapRef}>
         <img className={s.introImg} src="/images/name.svg" alt="" />
         <img className={s.introImg} src="/images/name.svg" alt="" />
