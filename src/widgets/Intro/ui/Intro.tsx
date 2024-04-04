@@ -9,46 +9,21 @@ export function Intro() {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // const tl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: introImgWrapRef.current,
-    //     start: 'top 0%',
-    //     end: 'bottom top',
-    //     scrub: true,
-    //     toggleActions: 'play none none reset',
-    //   },
-    // });
-    //
-    // tl.to(introImgWrapRef.current, {
-    //   x: '-30%',
-    // });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: introImgWrapRef.current,
+        start: 'top 0%',
+        end: 'bottom top',
+        scrub: true,
+      },
+    });
 
-    const initScrollTrigger = () => {
-      // 스크롤트리거 초기화
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: introImgWrapRef.current,
-          start: 'top 0%',
-          end: 'bottom top',
-          scrub: true,
-          toggleActions: 'play none none reset',
-        },
-      });
-
-      tl.to(introImgWrapRef.current, {
-        x: '-30%',
-      });
-    };
-
-    // 페이지 로드 후 초기화
-    window.addEventListener('load', initScrollTrigger);
-
-    // 윈도우 크기 변경 시에도 초기화
-    window.addEventListener('resize', initScrollTrigger);
+    tl.to(introImgWrapRef.current, {
+      x: '-30%',
+    });
 
     return () => {
-      window.removeEventListener('load', initScrollTrigger);
-      window.removeEventListener('resize', initScrollTrigger);
+      ScrollTrigger.getAll().forEach(instance => instance.kill());
     };
   }, []);
 
