@@ -6,35 +6,55 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 export function Intro() {
   const introImgWrapRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: introRef.current,
-        start: 'clamp(top 50%)',
-        end: 'bottom top',
-        scrub: true,
-        markers: true,
-      },
-    });
+    const imgElement = imgRef.current;
 
-    tl.to(introImgWrapRef.current, {
-      duration: 1,
-      xPercent: -30,
-      ease: 'linear',
-    });
+    const onImageLoaded = () => {
+      // 이미지 로딩 완료 후 ScrollTrigger 설정
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: introRef.current,
+          start: 'top 50%',
+          end: 'bottom top',
+          scrub: true,
+          markers: true,
+        },
+      });
 
-    window.onload = () => {
+      tl.to(introImgWrapRef.current, {
+        duration: 1,
+        xPercent: -30,
+        ease: 'linear',
+      });
       ScrollTrigger.refresh();
+    };
+
+    if (imgElement && imgElement.complete) {
+      // 이미지가 로드되었다면
+      onImageLoaded();
+    } else {
+      imgElement?.addEventListener('load', onImageLoaded);
+    }
+
+    // 클린업 함수에서는 이전에 복사한 변수를 사용하여 이벤트 리스너를 제거
+    return () => {
+      imgElement?.removeEventListener('load', onImageLoaded);
     };
   }, []);
 
   return (
     <section className={`${s.intro} main-opacity`} ref={introRef}>
       <div className={s.introImgWrap} ref={introImgWrapRef}>
-        <img className={s.introImg} src="/images/name.svg" alt="" />
+        <img
+          className={s.introImg}
+          ref={imgRef}
+          src="/images/name.svg"
+          alt=""
+        />
       </div>
       <div className="main-grid container">
         <div className={s.introDesc}>
