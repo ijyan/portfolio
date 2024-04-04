@@ -18,7 +18,7 @@ export function Intro() {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: introRef.current,
-          start: 'top 50%',
+          start: 'top top',
           end: 'bottom top',
           scrub: true,
           markers: true,
