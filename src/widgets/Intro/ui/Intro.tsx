@@ -21,6 +21,16 @@ export function Intro() {
     tl.to(introImgWrapRef.current, {
       x: '-30%',
     });
+
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
