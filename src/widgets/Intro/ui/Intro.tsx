@@ -9,27 +9,27 @@ export function Intro() {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: introImgWrapRef.current,
-        start: 'top 0%',
-        end: 'bottom top',
-        scrub: true,
+    ScrollTrigger.matchMedia({
+      all() {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: introImgWrapRef.current,
+            start: 'top 0%',
+            end: 'bottom top',
+            scrub: true,
+          },
+        });
+
+        tl.to(introImgWrapRef.current, {
+          x: '-30%',
+        });
       },
     });
 
-    tl.to(introImgWrapRef.current, {
-      x: '-30%',
-    });
-
-    const handleResize = () => {
-      ScrollTrigger.refresh();
-    };
-
-    window.addEventListener('resize', handleResize, { passive: true });
+    window.addEventListener('resize', ScrollTrigger.update);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('resize', ScrollTrigger.update);
     };
   }, []);
 
