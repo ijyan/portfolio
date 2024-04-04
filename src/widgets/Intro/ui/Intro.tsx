@@ -9,27 +9,23 @@ export function Intro() {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    ScrollTrigger.matchMedia({
-      all() {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: introImgWrapRef.current,
-            start: 'top 0%',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
-
-        tl.to(introImgWrapRef.current, {
-          x: '-30%',
-        });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: introImgWrapRef.current,
+        start: 'top 0%',
+        end: 'bottom top',
+        scrub: true,
       },
     });
 
-    window.addEventListener('resize', ScrollTrigger.update);
+    tl.to(introImgWrapRef.current, {
+      x: '-30%',
+    });
+
+    ScrollTrigger.refresh();
 
     return () => {
-      window.removeEventListener('resize', ScrollTrigger.update);
+      ScrollTrigger.getAll().forEach(instance => instance.kill());
     };
   }, []);
 
