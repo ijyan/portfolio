@@ -18,6 +18,7 @@ export function Intro() {
           start: 'clamp(top 50%)',
           end: 'bottom top',
           scrub: true,
+          markers: true,
         },
       });
 
