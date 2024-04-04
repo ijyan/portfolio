@@ -3,31 +3,27 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useLayoutEffect, useRef } from 'react';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export function Intro() {
   const introImgWrapRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: introImgWrapRef.current,
-          start: 'top 0%',
-          end: 'bottom top',
-          scrub: true,
-          // markers: true,
-        },
-      });
+    gsap.registerPlugin(ScrollTrigger);
 
-      tl.to(introImgWrapRef.current, {
-        x: '-30%',
-      });
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: introImgWrapRef.current,
+        start: 'top 0%',
+        end: 'bottom top',
+        scrub: true,
+      },
+    });
+
+    tl.to(introImgWrapRef.current, {
+      x: '-30%',
     });
 
     return () => {
-      // ScrollTrigger.getAll().forEach(instance => instance.kill());
-      ctx.revert();
+      ScrollTrigger.getAll().forEach(instance => instance.kill());
     };
   }, []);
 
