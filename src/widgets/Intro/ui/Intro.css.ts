@@ -9,19 +9,16 @@ export const intro = style({
 });
 
 export const introImgWrap = style({
-  display: 'flex',
-  gap: '10vh',
-  flexWrap: 'nowrap',
   willChange: 'transform',
 });
 
 export const introImg = style({
-  width: '160vw',
+  width: '365vw',
   flex: '0 0 auto',
 
   '@media': {
     'screen and (min-width: 860px)': {
-      width: '65vw',
+      width: '140vw',
     },
   },
 });

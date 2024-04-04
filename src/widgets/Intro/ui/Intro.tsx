@@ -35,7 +35,6 @@ export function Intro() {
     <section className={`${s.intro} main-opacity`} ref={introRef}>
       <div className={s.introImgWrap} ref={introImgWrapRef}>
         <img className={s.introImg} src="/images/name.svg" alt="" />
-        <img className={s.introImg} src="/images/name.svg" alt="" />
       </div>
       <div className="main-grid container">
         <div className={s.introDesc}>
