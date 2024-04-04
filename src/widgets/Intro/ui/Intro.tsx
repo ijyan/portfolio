@@ -3,11 +3,12 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 
+gsap.registerPlugin(ScrollTrigger);
+
 export function Intro() {
   const introImgWrapRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: introImgWrapRef.current,

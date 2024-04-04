@@ -62,6 +62,7 @@ module.exports = {
     'jsx-a11y/label-has-associated-control': 1,
     'react/button-has-type': 0,
     'import/extensions': 0,
+    'no-return-assign': 0,
   },
   ignorePatterns: ['vite.config.ts'], //
 };
