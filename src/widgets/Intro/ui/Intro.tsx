@@ -22,7 +22,14 @@ export function Intro() {
       x: '-30%',
     });
 
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
+      window.removeEventListener('resize', handleResize);
       ScrollTrigger.getAll().forEach(instance => instance.kill());
     };
   }, []);
