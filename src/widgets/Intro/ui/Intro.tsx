@@ -22,7 +22,7 @@ export function Intro() {
 
       tl.to(introImgWrapRef.current, {
         duration: 1,
-        x: '-30%',
+        xPercent: -30,
         ease: 'linear',
       });
     };
