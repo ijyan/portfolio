@@ -8,20 +8,22 @@ export function Intro() {
   useEffect(() => {
     const loadScrollTrigger = async () => {
       // ScrollTrigger 모듈 비동기 처리
-      const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+      const ScrollTrigger = await import('gsap/ScrollTrigger');
       gsap.registerPlugin(ScrollTrigger);
 
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: introImgWrapRef.current,
-          start: 'top 0%',
-          end: 'bottom top',
+          start: () => 'clamp(top 50%)',
+          end: () => 'bottom top',
           scrub: true,
         },
       });
 
       tl.to(introImgWrapRef.current, {
+        duration: 1,
         x: '-30%',
+        ease: 'linear',
       });
     };
 
