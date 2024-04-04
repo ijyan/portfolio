@@ -1,15 +1,17 @@
 import * as s from '@/widgets/Intro/ui/Intro.css.ts';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 
 export function Intro() {
   const introImgWrapRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const loadScrollTrigger = async () => {
+    // const loadScrollTrigger = async () => {
+    const loadScrollTrigger = () => {
       // ScrollTrigger 모듈 비동기 처리
-      const ScrollTrigger = await import('gsap/ScrollTrigger');
+      // const ScrollTrigger = await import('gsap/ScrollTrigger');
       gsap.registerPlugin(ScrollTrigger);
 
       const tl = gsap.timeline({
