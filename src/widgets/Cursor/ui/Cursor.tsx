@@ -24,9 +24,6 @@ export function Cursor() {
   }, []);
 
   return (
-    <div
-      className={`${s.cursor} ${hovered ? 'pointer' : ''}`}
-      ref={cursorRef}
-    />
+    <div className={`${s.cursor} ${hovered ? 'on' : ''}`} ref={cursorRef} />
   );
 }
