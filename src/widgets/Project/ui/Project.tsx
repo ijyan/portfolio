@@ -4,12 +4,11 @@ import { gsap } from 'gsap';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { data } from '@/widgets/Project/api/data.ts';
-
-import { ImgBox } from '@/widgets/Project/ui/ImgBox.tsx';
+import { IProduct } from '@/widgets/Project/api/types.ts';
 
 export function Project() {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
-  const [currentImg, setCurrentImg] = useState<string | null>(null);
+  const [launch, setLaunch] = useState<string>('');
 
   useEffect(() => {
     if (hoveredId) {
@@ -23,6 +22,20 @@ export function Project() {
     }
   }, [hoveredId]);
 
+  const handleMouseEnter = (item: IProduct) => {
+    setHoveredId(item.id);
+    if (item.link.launch) {
+      setLaunch(item.link.launch);
+    } else {
+      setLaunch('');
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredId(null);
+    setLaunch('');
+  };
+
   return (
     <section id="project" className={`${s.project} container`}>
       <div className="blind">프로젝트</div>
@@ -32,24 +45,17 @@ export function Project() {
           <img src="/images/ico_arrowCurved.svg" alt="" />
         </div>
       </div>
-      <div>
+      <div className="project-list">
         {data.map(item => (
           <div
             className={`${s.projectList} main-grid main-opacity ${hoveredId === item.id ? 'main-opacity-full' : ''}`}
             key={item.id}
-            onMouseEnter={() => {
-              setHoveredId(item.id);
-              setCurrentImg(item.imgUrl);
-            }}
-            onMouseLeave={() => {
-              setHoveredId(null);
-              setCurrentImg(null);
-            }}
+            onMouseEnter={() => handleMouseEnter(item)}
+            onMouseLeave={() => handleMouseLeave()}
           >
             <div className={`${s.projectYear}`}>{item.year}</div>
             <div className={`${s.projectTitleWrap}`}>
               <div className="title">{item.title}</div>
-              {/* <div className="tag">{item.tag}</div> */}
             </div>
             <div className={s.projectButtonWrap}>
               {item.link.code && (
@@ -85,7 +91,23 @@ export function Project() {
           </div>
         ))}
       </div>
-      <ImgBox imgUrl={currentImg} hover={hoveredId} />
+      <div className="project-preview">
+        {data.map((item, idx) => (
+          <div className={`${s.preview} ${hoveredId === idx + 1 ? 'on' : ''}`}>
+            <img className={`${s.previewImg}`} src={item.imgUrl} alt="" />
+          </div>
+        ))}
+        {launch && (
+          <Link
+            to={launch}
+            target="_blank"
+            className={`${s.previewLaunch} ${hoveredId ? 'on' : ''}`}
+          >
+            <span>Launch</span>
+            <img src="/images/ico_arrowLaunch.svg" alt="" />
+          </Link>
+        )}
+      </div>
     </section>
   );
 }

@@ -23,6 +23,7 @@ export const projectList = style({
   paddingBlock: '2.2rem',
   borderBlock: '1px solid #fff',
   marginTop: '-1px',
+  zIndex: 1,
 
   '@media': {
     'screen and (min-width: 860px)': {
@@ -196,4 +197,83 @@ globalStyle(`${projectLaunch} a:hover img`, {
 
 globalStyle(`${projectLaunch} a:hover span`, {
   transform: 'scale(1.4)',
+});
+
+/* **************************************** *
+ * PREVIEW IMAGE
+ * **************************************** */
+export const preview = style({
+  position: 'fixed',
+  width: '70vw',
+  height: '42vw',
+  overflow: 'hidden',
+  objectFit: 'cover',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%,-50%) scale(0)',
+  transition: 'transform 1s ease',
+
+  '@media': {
+    'screen and (min-width: 860px)': {
+      width: '50vw',
+      height: '32vw',
+    },
+  },
+});
+
+globalStyle(`${preview}.on`, {
+  transform: 'translate(-50%,-50%) scale(1)',
+});
+
+export const previewImg = style({
+  width: '100%',
+  height: '0',
+  transform: 'scale(1.5)',
+  backgroundSize: 'cover',
+  backgroundPosition: 'center center',
+  pointerEvents: 'none',
+  transition: 'transform 1s 0.2s ease-out',
+});
+
+globalStyle(`${preview}.on ${previewImg}`, {
+  height: '100%',
+  transform: 'scale(1)',
+});
+
+export const previewLaunch = style({
+  display: 'none',
+  '@media': {
+    'screen and (min-width: 860px)': {
+      display: 'none',
+    },
+  },
+});
+
+globalStyle(`${previewLaunch}.on`, {
+  position: 'fixed',
+  display: 'flex',
+  bottom: '5rem',
+  left: '50%',
+  background: '#fff',
+  padding: '1.4rem 2rem',
+  justifyContent: 'center',
+  alignItems: 'center',
+  borderRadius: '10rem',
+  transform: 'translate3D(-50%, 2rem, 0) scale(.95)',
+  transition: 'all .4s cubic-bezier(.29,-.31,.66,-.56)',
+  color: '#2b2b2b',
+  fontWeight: 600,
+  gap: '0.8rem',
+  zIndex: 10,
+
+  '@media': {
+    'screen and (min-width: 860px)': {
+      display: 'none',
+    },
+  },
+});
+
+globalStyle(`${previewLaunch} img`, {
+  filter: 'invert(1)',
+  width: '1rem',
 });
