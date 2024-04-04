@@ -15,11 +15,16 @@ export function Intro() {
         start: 'top 0%',
         end: 'bottom top',
         scrub: true,
+        toggleActions: 'play none none reset',
       },
     });
 
     tl.to(introImgWrapRef.current, {
       x: '-30%',
+    });
+
+    ScrollTrigger.config({
+      autoRefreshEvents: 'visibilitychange,DOMContentLoaded,load',
     });
 
     ScrollTrigger.refresh();

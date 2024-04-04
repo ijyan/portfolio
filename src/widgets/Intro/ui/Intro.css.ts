@@ -12,6 +12,7 @@ export const introImgWrap = style({
   display: 'flex',
   gap: '10vh',
   flexWrap: 'nowrap',
+  willChange: 'transform',
 });
 
 export const introImg = style({
