@@ -134,6 +134,7 @@ export const projectLink = style({
 export const projectLinkText = style({
   display: 'inline-block',
   transition: '.45s cubic-bezier(.68, .6, .32, 1.6)',
+  textTransform: 'uppercase',
 
   selectors: {
     [`${projectLink}:hover &`]: {
@@ -205,18 +206,19 @@ globalStyle(`${projectLaunch} a:hover span`, {
 export const preview = style({
   position: 'fixed',
   width: '70vw',
-  height: '42vw',
   overflow: 'hidden',
   objectFit: 'cover',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%,-50%) scale(0)',
   transition: 'transform 1s ease',
+  aspectRatio: '16 / 9',
+  opacity: 0.9,
+  borderRadius: '1.6rem',
 
   '@media': {
     'screen and (min-width: 860px)': {
       width: '50vw',
-      height: '32vw',
     },
   },
 });
@@ -229,7 +231,6 @@ export const previewImg = style({
   width: '100%',
   height: '0',
   transform: 'scale(1.5)',
-  backgroundSize: 'cover',
   backgroundPosition: 'center center',
   pointerEvents: 'none',
   transition: 'transform 1s 0.2s ease-out',

@@ -26,10 +26,8 @@ export function About() {
               <Link to="tel:010-2651-8065" className={s.textLink}>
                 <img src="/images/ico_arrow.svg" alt="" />
                 <div>
-                  <div>
-                    Phone
-                    <span>010-2651-8065</span>
-                  </div>
+                  Phone
+                  <span>010-2651-8065</span>
                 </div>
               </Link>
             </div>

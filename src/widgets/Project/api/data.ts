@@ -4,59 +4,92 @@ export const data: IProduct[] = [
   {
     id: 1,
     year: '//24',
-    title: 'PortFolio',
-    link: {
-      code: 'https://github.com/ijyan/portfolio',
-      notion: '#',
-      launch: '',
-    },
-    imgUrl:
-      'https://images.unsplash.com/photo-1521493959102-bdd6677fdd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-  },
-  {
-    id: 2,
-    year: '//24',
     title: 'Grow Green',
     link: {
       code: 'https://github.com/ijyan/project-growgreen',
-      notion: '#',
-      launch: '#',
+      notion:
+        'https://ijyan.notion.site/Grow-Green-8ab5d28744ab448a9c1d6abde8ff7276',
+      launch: 'https://project-growgreen.netlify.app/',
     },
-    imgUrl:
-      'https://images.unsplash.com/photo-1473605768212-7e1f2c756179?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    imgUrl: '/images/project/growgreen.jpg',
+  },
+  {
+    id: 2,
+    year: '//23',
+    title: 'Passkoreanet',
+    link: {
+      notion: '#',
+      figma:
+        'https://www.figma.com/file/p3xuYQTvw5N5oGQsjRpyUO/passkoreanet?type=design&node-id=0%3A1&mode=design&t=q83SsnHxIbItsjIi-1',
+    },
+    imgUrl: '/images/project/passkoreanet.jpg',
   },
   {
     id: 3,
     year: '//23',
-    title: 'Nmail Design',
+    title: 'Daedong Department',
     link: {
-      notion: '#',
-      launch: 'https://www.geojeview.co.kr/',
+      notion: 'https://www.notion.so/ijyan/126a33b0e5c14df8ac1600edd1c3fe02',
+      figma:
+        'https://www.figma.com/file/89dPsCUJAsyMYl1qVuQVd0/daedong?type=design&node-id=0%3A1&mode=design&t=dIdkp5TcLdyDxb2r-1',
     },
-    imgUrl:
-      'https://images.unsplash.com/photo-1521493959102-bdd6677fdd81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    imgUrl: '/images/project/daedong.jpg',
   },
   {
     id: 4,
     year: '//22',
-    title: 'Peoplenjob',
+    title: 'Nmail PHP',
     link: {
-      notion: '#',
-      launch:
-        'https://www.peoplenjob.com/?gad_source=1&gclid=Cj0KCQjwqpSwBhClARIsADlZ_TnHRoQxCEllISdLNyWYvNd5mBhwoEidPjjf5iYRrs4SXLUsjpwFJ2UaAr-zEALw_wcB',
+      notion:
+        'https://www.notion.so/ijyan/Nmail-PHP-f84cc69446a047fa8a66fbda2676b17a',
+      figma:
+        'https://www.figma.com/file/0kmQa6pImpfviQdnIRTdrM/Nmail?type=design&node-id=0-1&mode=design',
     },
-    imgUrl:
-      'https://images.unsplash.com/photo-1509099863731-ef4bff19e808?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80',
+    imgUrl: '/images/project/nmail-design.jpg',
   },
   {
     id: 5,
+    year: '//22',
+    title: 'Peoplenjob',
+    link: {
+      notion:
+        'https://ijyan.notion.site/Peoplenjob-a7e71551a337458795940293bf554ea2?pvs=4',
+      figma:
+        'https://www.figma.com/file/DqYqk5cvF9FKq1pCS3yndY/peoplenjob?type=design&node-id=0%3A1&mode=design&t=HDFBCMQqbilERnrd-1',
+    },
+    imgUrl: '/images/project/peoplenjob.png',
+  },
+  {
+    id: 6,
+    year: '//21',
+    title: 'Adonis Country Club',
+    link: {
+      notion:
+        'https://ijyan.notion.site/0fd790dae91344af83d3e2accf422bcc?pvs=4',
+      figma:
+        'https://www.figma.com/file/diLZzdYotcSXY58BXTmspl/Adonis-Country-Club?type=design&node-id=0%3A1&mode=design&t=vd03jwH2o6EXrayq-1',
+      launch: 'https://www.adoniscc.co.kr/',
+    },
+    imgUrl: '/images/project/adonis.jpg',
+  },
+  {
+    id: 7,
     year: '//21',
     title: 'Geoje View Country Club',
     link: {
-      notion: '#',
+      notion: 'https://ijyan.notion.site/d027e5fdf570435baeb2410a57bad505',
       launch: 'https://www.geojeview.co.kr/',
     },
-    imgUrl:
-      'https://images.unsplash.com/photo-1473605768212-7e1f2c756179?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    imgUrl: '/images/project/geojeview.jpg',
+  },
+  {
+    id: 8,
+    year: '-',
+    title: 'Banner',
+    link: {
+      notion:
+        'https://ijyan.notion.site/292c1885eeac4bf9bf728a702abbf94d?pvs=4',
+    },
+    imgUrl: '/images/project/banner.png',
   },
 ];

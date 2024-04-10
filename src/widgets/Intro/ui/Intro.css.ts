@@ -4,7 +4,7 @@ import { style } from '@vanilla-extract/css';
  * INTRO
  * **************************************** */
 export const intro = style({
-  margin: '5rem 0 0',
+  padding: '5rem 0 0',
   overflow: 'hidden',
 });
 

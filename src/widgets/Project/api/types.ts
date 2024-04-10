@@ -10,4 +10,5 @@ export interface IProductLink {
   code?: string;
   launch?: string;
   notion?: string;
+  figma?: string;
 }

@@ -64,7 +64,7 @@ export function Project() {
                   target="_blank"
                   className={s.projectLink}
                 >
-                  (<span className={s.projectLinkText}>CODE</span>)
+                  (<span className={s.projectLinkText}>code</span>)
                 </Link>
               )}
               {item.link.notion && (
@@ -73,7 +73,16 @@ export function Project() {
                   target="_blank"
                   className={s.projectLink}
                 >
-                  (<span className={s.projectLinkText}>NOTION</span>)
+                  (<span className={s.projectLinkText}>notion</span>)
+                </Link>
+              )}
+              {item.link.figma && (
+                <Link
+                  to={item.link.figma}
+                  target="_blank"
+                  className={s.projectLink}
+                >
+                  (<span className={s.projectLinkText}>figma</span>)
                 </Link>
               )}
             </div>
@@ -92,10 +101,10 @@ export function Project() {
         ))}
       </div>
       <div className="project-preview">
-        {data.map((item, idx) => (
+        {data.map(item => (
           <div
             key={item.id}
-            className={`${s.preview} ${hoveredId === idx + 1 ? 'on' : ''}`}
+            className={`${s.preview} ${hoveredId === item.id ? 'on' : ''}`}
           >
             <img className={`${s.previewImg}`} src={item.imgUrl} alt="" />
           </div>
