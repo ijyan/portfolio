@@ -62,6 +62,19 @@ export const data: IProduct[] = [
   {
     id: 6,
     year: '//21',
+    title: 'Best79',
+    link: {
+      notion:
+        'https://ijyan.notion.site/Best79-472e16015be34097812686c0d22c1512?pvs=4',
+      figma:
+        'https://www.figma.com/file/x17p30U7QDx5h2m6xy6Uw8/best79?type=design&node-id=0%3A1&mode=design&t=dkSXD0fdBVJnakPe-1',
+      launch: 'https://best79-ijyan.netlify.app/',
+    },
+    imgUrl: '/images/project/best79.jpg',
+  },
+  {
+    id: 7,
+    year: '//21',
     title: 'Adonis Country Club',
     link: {
       notion:
@@ -73,7 +86,7 @@ export const data: IProduct[] = [
     imgUrl: '/images/project/adonis.jpg',
   },
   {
-    id: 7,
+    id: 8,
     year: '//21',
     title: 'Geoje View Country Club',
     link: {
@@ -83,7 +96,7 @@ export const data: IProduct[] = [
     imgUrl: '/images/project/geojeview.jpg',
   },
   {
-    id: 8,
+    id: 9,
     year: '-',
     title: 'Banner',
     link: {

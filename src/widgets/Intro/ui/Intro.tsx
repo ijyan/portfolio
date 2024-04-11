@@ -39,7 +39,7 @@ export function Intro() {
       imgElement?.addEventListener('load', onImageLoaded);
     }
 
-    // 클린업 함수에서는 이전에 복사한 변수를 사용하여 이벤트 리스너를 제거
+    // 이벤트 리스너 제거
     return () => {
       imgElement?.removeEventListener('load', onImageLoaded);
     };
