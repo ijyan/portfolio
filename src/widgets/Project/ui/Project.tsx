@@ -102,12 +102,16 @@ export function Project() {
       </div>
       <div className="project-preview">
         {data.map(item => (
-          <div
-            key={item.id}
-            className={`${s.preview} ${hoveredId === item.id ? 'on' : ''}`}
-          >
-            <img className={`${s.previewImg}`} src={item.imgUrl} alt="" />
-          </div>
+          <>
+            {item.imgUrl && (
+              <div
+                key={item.id}
+                className={`${s.preview} ${hoveredId === item.id ? 'on' : ''}`}
+              >
+                <img className={`${s.previewImg}`} src={item.imgUrl} alt="" />
+              </div>
+            )}
+          </>
         ))}
         {launch && (
           <Link

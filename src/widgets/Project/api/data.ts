@@ -2,6 +2,18 @@ import { IProduct } from '@/widgets/Project/api/types.ts';
 
 export const data: IProduct[] = [
   {
+    id: 20240429,
+    year: '//24',
+    title: '우리동네일꾼',
+    link: {
+      code: 'https://github.com/ijyan/our-neighborhood-candidate',
+      notion:
+        'https://ijyan.notion.site/8ab5d28744ab448a9c1d6abde8ff7276?pvs=4',
+      // launch: 'https://project-growgreen.netlify.app/',
+    },
+    imgUrl: '',
+  },
+  {
     id: 1,
     year: '//24',
     title: 'Grow Green',
