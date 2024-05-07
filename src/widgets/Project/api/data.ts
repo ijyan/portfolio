@@ -30,7 +30,8 @@ export const data: IProduct[] = [
     year: '//23',
     title: 'Passkoreanet',
     link: {
-      notion: '#',
+      notion:
+        'https://ijyan.notion.site/Passkoreanet-3a224bf8569f4d8f86f8d2f8e3f179e3',
       figma:
         'https://www.figma.com/file/p3xuYQTvw5N5oGQsjRpyUO/passkoreanet?type=design&node-id=0%3A1&mode=design&t=q83SsnHxIbItsjIi-1',
     },
