@@ -14,11 +14,11 @@ export function About() {
               <img src="/images/ico_arrowCurved.svg" alt="" />
             </div>
             <div>
-              <Link to="mailto:kjian900@gmail.com" className={s.textLink}>
+              <Link to="mailto:ijyan.dev@gmail.com" className={s.textLink}>
                 <img src="/images/ico_arrow.svg" alt="" />
                 <div>
                   Mail
-                  <span>kjian900@gmail.com</span>
+                  <span>ijyan.dev@gmail.com</span>
                 </div>
               </Link>
             </div>
